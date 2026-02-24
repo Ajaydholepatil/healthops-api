@@ -11,7 +11,6 @@ public class UserRequestDto {
 
     private String firstName;
     private String lastName;
-
     private String title;
     private String gender;
 
