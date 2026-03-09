@@ -9,10 +9,11 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    @Query("""
-                SELECT u FROM UserEntity u
-                WHERE (:firstName IS NULL OR u.firstName = :firstName)
-                  AND (:userType IS NULL OR u.userType = :userType)
-            """)
-    List<UserEntity> searchUsers(String firstName, String userType);
+    @Query(value = """
+            SELECT * FROM user u
+            WHERE (:firstName IS NULL OR SOUNDEX(u.first_name) = SOUNDEX(:firstName))
+              AND (:userType IS NULL OR u.user_type = :userType)
+              AND (:gender IS NULL OR u.gender = :gender)
+            """, nativeQuery = true)
+    List<UserEntity> searchUsers(String firstName, String gender, String userType);
 }

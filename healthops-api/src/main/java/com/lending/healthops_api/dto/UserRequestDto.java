@@ -25,4 +25,6 @@ public class UserRequestDto {
 
     private String createdBy;
     private String updatedBy;
+
+    private String barcode;
 }

@@ -34,9 +34,9 @@ public class UserController {
 
     //http://localhost:8080/helthOps/searchUsers?userType=ADMIN
     @GetMapping("/searchUsers")
-    public ResponseEntity<ApiResponse<List<UserEntity>>> searchUsers(@RequestParam(required = false) String firstName, @RequestParam(required = false) String userType) {
+    public ResponseEntity<ApiResponse<List<UserEntity>>> searchUsers(@RequestParam(required = false) String firstName, @RequestParam(required = false) String gender, @RequestParam(required = false) String userType) {
 
-        List<UserEntity> users = userService.searchUsers(firstName, userType);
+        List<UserEntity> users = userService.searchUsers(firstName, gender, userType);
 
         return ResponseEntity.ok(ApiResponseBuilder.success(ApiResponseCode.MESSAGE_ID_002, ApiResponseCode.MESSAGE_002, users));
     }
@@ -59,4 +59,6 @@ public class UserController {
         return ResponseEntity.ok(ApiResponseBuilder.success(ApiResponseCode.MESSAGE_ID_004, ApiResponseCode.MESSAGE_004, user));
     }
 
+
 }
+

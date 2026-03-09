@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserService {
     UserEntity createUser(UserRequestDto userRequestDto);
 
-    List<UserEntity> searchUsers(String firstName, String userType);
+    List<UserEntity> searchUsers(String firstName,String gender, String userType);
 
     UserEntity updateUser(Long userId, UserRequestDto userRequestDto);
 

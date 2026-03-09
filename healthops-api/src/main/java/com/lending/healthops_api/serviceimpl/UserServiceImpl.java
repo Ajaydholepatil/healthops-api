@@ -34,13 +34,14 @@ public class UserServiceImpl implements UserService {
         user.setUpdated(LocalDateTime.now());
         user.setCreatedBy(userRequestDto.getCreatedBy());
         user.setUpdatedBy(userRequestDto.getCreatedBy());
+        user.setBarcode(userRequestDto.getBarcode());
 
         return userRepository.save(user);
     }
 
     @Override
-    public List<UserEntity> searchUsers(String firstName, String userType) {
-        return userRepository.searchUsers(firstName, userType);
+    public List<UserEntity> searchUsers(String firstName, String gender, String userType) {
+        return userRepository.searchUsers(firstName, gender, userType);
     }
 
     @Override
@@ -58,6 +59,7 @@ public class UserServiceImpl implements UserService {
 
         existingUser.setUpdated(LocalDateTime.now());
         existingUser.setUpdatedBy(userRequestDto.getUpdatedBy());
+        existingUser.setBarcode(userRequestDto.getBarcode());
 
         return userRepository.save(existingUser);
     }

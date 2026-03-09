@@ -2,6 +2,7 @@ package com.lending.healthops_api.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import java.time.LocalDateTime;
 
@@ -47,4 +48,7 @@ public class UserEntity {
 
     @Column(name = "updated_by", length = 40)
     private String updatedBy;
+
+    @Column(name = "barcode", columnDefinition = "VARCHAR(10)")
+    private String barcode;
 }
