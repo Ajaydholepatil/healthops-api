@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class UserRequestDto {
 
     private Long userId;
-
     private String firstName;
     private String lastName;
     private String title;
