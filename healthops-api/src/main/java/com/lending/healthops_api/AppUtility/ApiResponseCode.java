@@ -3,8 +3,6 @@ package com.lending.healthops_api.AppUtility;
 public class ApiResponseCode {
 
 
-
-
     private ApiResponseCode() {
     }
 
@@ -19,5 +17,6 @@ public class ApiResponseCode {
 
     public static final String MESSAGE_ID_004 = "MESSAGE_ID_004";
     public static final String MESSAGE_004 = "User Fetch Successfully";
+
 
 }
